@@ -1,0 +1,5 @@
+%dl
+  - @prompts.each do |prompt|
+    %dd= prompt.body
+
+= will_paginate @prompts
