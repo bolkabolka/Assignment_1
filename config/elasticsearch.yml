@@ -1,0 +1,15 @@
+development: &default
+  host: <%= "https://#{ENV['ELASTIC_USER']}:#{ENV['ELASTIC_PASSWORD']}@localhost:9200" %>
+  transport_options:
+    request:
+      timeout: !!integer 300
+    ssl:
+      ca_file: '/Users/slavik/Development/personal/Assignment_1/http_ca.crt'
+test:
+  <<: *default
+staging:
+  <<: *default
+production:
+  transport_options:
+    request:
+      timeout: !!integer 300
