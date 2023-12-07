@@ -1,7 +1,7 @@
 .d-block.border.border-primary.rounded.p-2.mt-2
-  %form{action: "/prompts", method: "get", class: "form-inline my-2 my-lg-0"}
-    %input{class: "form-control mr-sm-2", type: "search", aria: {label: "Search"}, name: "q"}
-    %button{class: "btn btn-outline-success my-2 my-sm-0 mx-auto d-block", type: "submit"} Search
+  = form_tag prompts_path, method: 'get', class: 'form-inline my-2 my-lg-0' do
+    = text_field_tag :q, params[:q], class: 'form-control mr-sm-2', type: 'search', aria: { label: 'Search' }
+    = submit_tag t('helpers.buttons.search'), class: 'btn btn-outline-success my-2 my-sm-0 mx-auto d-block', type: 'submit'
 %dl.mt-2
   - @prompts.each do |prompt|
     %dd= prompt.body
