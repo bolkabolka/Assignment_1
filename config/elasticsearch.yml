@@ -10,6 +10,9 @@ test:
 staging:
   <<: *default
 production:
+  cloud_id: <%= ENV['ELASTIC_CLOUD_ID'] %>
+  user: <%= ENV['ELASTIC_USER'] %>
+  password: <%= ENV['ELASTIC_PASSWORD'] %>
   transport_options:
     request:
       timeout: !!integer 300
